@@ -1,0 +1,187 @@
+@import url("https://fonts.googleapis.com/css2?family=Iceland&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Iceland", sans-serif;
+  margin-left: 26px;
+  margin-right: 26px;
+}
+
+.navbar > a {
+  font-family: "Inter", sans-serif;
+  font-weight: medium 600;
+  text-decoration: none;
+  color: black;
+  margin-left: 16px;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 4px;
+  border-radius: 2px;
+}
+
+#hamburger {
+  background: none;
+  font-size: 22px;
+}
+
+#navbar-two {
+  display: none;
+  position: absolute;
+  top: 60px;
+  right: 26px;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 12px 16px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#navbar-two > a {
+  display: block;
+  color: #111111;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 6px 0;
+  transition: all 0.2s ease;
+}
+
+#navbar-two > a:hover {
+  color: #6dd5fa;
+  transform: translateX(4px);
+  padding: 4px;
+  border-radius: 4px;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: #e5e7eb;
+  margin: 8px 0;
+}
+
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Inter", sans-serif;
+  font-style: italic;
+}
+
+.cta > h1 {
+  font-family: "Iceland", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: clamp(38px, 6vw, 50px);
+  text-align: center;
+}
+
+.cta > p {
+  font-size: 18px;
+}
+
+button {
+  font-family: "Inter", sans-serif;
+  background: #6dd5fa;
+  border: none;
+  border-radius: 4px;
+  padding: 8px;
+  margin: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn2 {
+  background: none;
+  border: 1px solid #e5e7eb;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #ffffff 0%, #f5f7fa 90%);
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  margin-right: 12px;
+}
+
+.profile > h2 {
+  font-family: "Iceland", sans-serif;
+  font-size: 60px;
+  position: relative;
+  top: 10px;
+}
+
+.profile > img {
+  position: relative;
+  bottom: 90px;
+  right: 10px;
+  width: 50%;
+  object-fit: contain;
+  z-index: 2;
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    display: none;
+  }
+  #navbar-two.show-nav {
+    display: flex;
+  }
+  .hero-section {
+    flex-direction: column;
+  }
+  .cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .cta > h1 {
+    text-align: center;
+  }
+  .profile {
+    margin: 0;
+    width: 80%;
+  }
+  .profile > img {
+    bottom: 100px;
+  }
+}
