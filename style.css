@@ -38,6 +38,10 @@ a:hover {
   border-radius: 2px;
 }
 
+.hamburger {
+  display: none;
+}
+
 #hamburger {
   background: none;
   font-size: 22px;
@@ -161,6 +165,9 @@ button:hover {
 @media (max-width: 600px) {
   .navbar {
     display: none;
+  }
+  .hamburger {
+    display: block;
   }
   #navbar-two.show-nav {
     display: flex;
