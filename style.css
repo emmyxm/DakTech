@@ -1,11 +1,27 @@
 @import url("https://fonts.googleapis.com/css2?family=Iceland&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gravitas+One&display=swap");
 
 body {
   margin: 0;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  height: 100vh;
+  background: #f3f3f3;
+  position: relative;
+}
+
+.blob {
+  position: absolute;
+  top: 200px;
+  left: -150px;
+  width: 300px;
+  height: 500px;
+  background: radial-gradient(circle, #3b82f6 5%, #60a5fa 40%, transparent);
+  filter: blur(120px);
+  opacity: 0.5;
+  border-radius: 50%;
+  z-index: 0;
 }
 
 header {
@@ -20,6 +36,7 @@ header {
   font-family: "Iceland", sans-serif;
   margin-left: 26px;
   margin-right: 26px;
+  position: relative;
 }
 
 .navbar > a {
@@ -36,6 +53,10 @@ a:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   padding: 4px;
   border-radius: 2px;
+}
+
+a::after {
+  border: 1px solid #e5e7eb;
 }
 
 .hamburger {
@@ -57,7 +78,7 @@ a:hover {
   border-radius: 8px;
   padding: 12px 16px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  z-index: 10;
+  z-index: 1;
   flex-direction: column;
   gap: 12px;
 }
@@ -91,6 +112,7 @@ hr {
   justify-content: space-around;
   flex-wrap: wrap;
   gap: 24px;
+  height: 100%;
 }
 
 .cta {
@@ -101,7 +123,8 @@ hr {
   font-family: "Inter", sans-serif;
   font-style: italic;
   text-align: center;
-  max-width: 350px;
+  max-width: 500px;
+  min-height: 250px;
 }
 
 .cta > h1 {
@@ -138,34 +161,59 @@ button:hover {
 }
 
 .profile {
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgb(255, 255, 255);
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  margin-right: 12px;
+  max-width: 350px;
+  min-height: 350px; */
+  position: relative;
+  z-index: 1;
+
+  width: 340px;
+  border-radius: 24px;
+  backdrop-filter: blur(20px);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.08),
+    0 8px 16px rgba(59, 130, 246, 0.08);
+  padding: 20px;
+  font-family: "Gravitas One", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.profile > p {
+  position: absolute;
+  left: 40%;
+  font-size: 38px;
+}
+
+.profile > img {
+  /* position: relative;
+  bottom: 30px;
+  width: 70%;
+  object-fit: contain;
+  z-index: 2;
+  align-self: center;
+  border-radius: 5px; */
+  width: 100%;
+  border-radius: 12px;
+  display: block;
+}
+
+.profile-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #e5e7eb 50%, #85e0ff);
-  /* background: linear-gradient(135deg, #ffffff 0%, #f5f7fa 90%); */
-  border: 1px solid #e5e7eb;
-  border-radius: 14px;
-  margin-right: 12px;
+  gap: 6px;
 }
 
-.profile > h2 {
-  font-family: "Iceland", sans-serif;
-  font-size: 60px;
-  position: relative;
-  top: 10px;
-}
-
-.profile > img {
-  position: relative;
-  bottom: 90px;
-  right: 10px;
-  width: 50%;
-  object-fit: contain;
-  z-index: 2;
-}
-
-@media (max-width: 600px) {
+@media (max-width: 550px) {
   .navbar {
     display: none;
   }
@@ -174,7 +222,21 @@ button:hover {
   }
   #navbar-two.show-nav {
     display: flex;
+    animation: 500ms drop-down ease-in-out;
+    transform-origin: top;
   }
+  @keyframes drop-down {
+    0% {
+      transform: scale(0);
+    }
+    70% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
   .hero-section {
     flex-direction: column;
   }
@@ -183,6 +245,10 @@ button:hover {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    max-width: 350px;
+    min-height: auto;
+    padding-left: 8px;
+    padding-right: 8px;
   }
   .cta > h1 {
     text-align: center;
