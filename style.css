@@ -346,4 +346,7 @@ main {
   .options > div:not(:last-child) {
     border: none;
   }
+  .options {
+    gap: 8px;
+  }
 }
