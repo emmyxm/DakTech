@@ -318,7 +318,7 @@ main {
   }
   .profile {
     margin: 0;
-    width: 80%;
+    /* width: 80%; */
   }
   .profile > img {
     bottom: 100px;
