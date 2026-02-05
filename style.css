@@ -103,8 +103,10 @@ a::after {
 hr {
   border: none;
   height: 1px;
-  background-color: #e5e7eb;
+  background-color: #b9bbbe;
   margin: 8px 0;
+  margin-left: 2px;
+  margin-right: 2px;
 }
 
 .hero-section {
@@ -228,7 +230,7 @@ main {
   display: flex;
   justify-content: space-around;
   /* background: #ffff; */
-  border: 1px #e5e7eb solid;
+  border: 1px #b9bbbe solid;
   max-width: 100%;
   border-radius: 4px;
 }
