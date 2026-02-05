@@ -310,7 +310,6 @@ main {
     flex-direction: column;
     padding-left: 8px;
     padding-right: 8px;
-    margin: 0;
     gap: 16px;
   }
   .cta {
@@ -329,7 +328,7 @@ main {
   }
   .profile {
     margin: 0;
-    /* width: 80%; */
+    width: 80%;
   }
   .profile > img {
     bottom: 100px;
@@ -346,5 +345,8 @@ main {
   }
   .options > div:not(:last-child) {
     border: none;
+  }
+  .main {
+    min-height:;
   }
 }
