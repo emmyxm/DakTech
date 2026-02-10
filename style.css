@@ -6,6 +6,7 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
+  font-family: "Times New Roman", Times, serif;
   /* min-height: 100vh; */
 }
 
@@ -14,12 +15,13 @@ body {
   top: 200px;
   left: -150px;
   width: 400px;
-  height: 250px;
+  height: 200px;
   background: radial-gradient(circle, #3b82f6 5%, #60a5fa 40%, transparent);
   filter: blur(120px);
   opacity: 0.5;
   border-radius: 50%;
   z-index: 0;
+  overflow: hidden;
 }
 
 header {
@@ -34,9 +36,10 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background: white;
   font-family: "Iceland", sans-serif;
-  margin-left: 26px;
-  margin-right: 26px;
+  padding-left: 26px;
+  padding-right: 26px;
   position: relative;
 }
 
@@ -100,14 +103,14 @@ a::after {
   border-radius: 4px;
 }
 
-hr {
+/* hr {
   border: none;
   height: 1px;
   background-color: #b9bbbe;
   margin: 8px 0;
   margin-left: 2px;
   margin-right: 2px;
-}
+} */
 
 .hero-section {
   display: flex;
@@ -214,11 +217,18 @@ button:hover {
 main {
   display: flex;
   flex-direction: column;
-  /* background: #c0c0c0; */
-  /* min-height: 100vh; */
+  background: white;
   padding: 24px;
   padding-top: 0px;
   z-index: 1;
+}
+
+.service {
+  font-size: 26px;
+}
+
+.service1 {
+  font-size: 36px;
 }
 
 .options-container {
@@ -250,13 +260,14 @@ main {
   margin-right: 16px;
 }
 
-/* .hr-2 {
+.hr-2 {
+  display: none;
   border: none;
   height: 1px;
   width: 100%;
   background-color: #e5e7eb;
   margin: 8px 0;
-} */
+}
 
 .design {
   display: flex;
@@ -276,13 +287,35 @@ main {
   text-align: left;
 }
 
+.projects-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.projects {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.projects > div {
+  min-width: 160px;
+  background: #f3f3f3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: start;
+}
+
+.img-two {
+  width: 80%;
+}
+
 @media (max-width: 550px) {
   .navbar {
     display: none;
   }
   .navigation {
-    margin-left: 8px;
-    margin-right: 8px;
     margin-bottom: 0px;
     margin-top: 0px;
   }
@@ -333,6 +366,12 @@ main {
   .profile > img {
     bottom: 100px;
   }
+  .service {
+    font-size: 22px;
+  }
+  .service1 {
+    font-size: 30px;
+  }
   .options {
     flex-direction: column;
   }
@@ -348,5 +387,8 @@ main {
   }
   .options {
     gap: 8px;
+  }
+  .projects {
+    flex-direction: column;
   }
 }
