@@ -6,6 +6,7 @@
 * {
   box-sizing: border-box;
   margin: 0;
+  padding: 0;
 }
 
 body {
@@ -126,8 +127,6 @@ hr {
   flex-wrap: wrap;
   gap: 24px;
   min-height: 100vh;
-  padding-bottom: 24px;
-  padding-top: 10px;
 }
 
 .cta {
@@ -188,7 +187,6 @@ button:hover {
   box-shadow:
     0 20px 40px rgba(0, 0, 0, 0.08),
     0 8px 16px rgba(59, 130, 246, 0.08);
-  padding: 20px;
   font-family: "Gravitas One", serif;
   font-weight: 400;
   font-style: normal;
@@ -196,7 +194,7 @@ button:hover {
 }
 
 .profile:hover {
-  transform: translateY(-8px);
+  transform: translateY(-10px);
 }
 
 .profile > p {
@@ -206,13 +204,6 @@ button:hover {
 }
 
 .profile > img {
-  /* position: relative;
-  bottom: 30px;
-  width: 70%;
-  object-fit: contain;
-  z-index: 2;
-  align-self: center;
-  border-radius: 5px; */
   width: 100%;
   border-radius: 12px;
   display: block;
