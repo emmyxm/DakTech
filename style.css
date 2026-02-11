@@ -1,12 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Iceland&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Gravitas+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
 
 body {
   margin: 0;
   display: flex;
   flex-direction: column;
-  font-family: "Times New Roman", Times, serif;
+  font-family: "Red Hat Text", sans-serif;
   /* min-height: 100vh; */
 }
 
@@ -28,7 +34,6 @@ header {
   display: flex;
   flex-direction: column;
   background: #f3f3f3;
-  /* min-height: 100vh; */
   overflow: hidden;
 }
 
@@ -40,6 +45,8 @@ header {
   font-family: "Iceland", sans-serif;
   padding-left: 26px;
   padding-right: 26px;
+  padding-top: 16px;
+  padding-bottom: 16px;
   position: relative;
 }
 
@@ -103,14 +110,14 @@ a::after {
   border-radius: 4px;
 }
 
-/* hr {
+hr {
   border: none;
   height: 1px;
   background-color: #b9bbbe;
   margin: 8px 0;
   margin-left: 2px;
   margin-right: 2px;
-} */
+}
 
 .hero-section {
   display: flex;
@@ -118,8 +125,9 @@ a::after {
   justify-content: space-around;
   flex-wrap: wrap;
   gap: 24px;
-  height: 100%;
+  min-height: 100vh;
   padding-bottom: 24px;
+  padding-top: 10px;
 }
 
 .cta {
@@ -132,6 +140,10 @@ a::after {
   text-align: center;
   max-width: 500px;
   min-height: 250px;
+}
+
+.occupation {
+  color: #3b82f6;
 }
 
 .cta > h1 {
@@ -218,9 +230,14 @@ main {
   display: flex;
   flex-direction: column;
   background: white;
+  min-height: 100vh;
   padding: 24px;
   padding-top: 0px;
   z-index: 1;
+}
+
+.one {
+  margin-top: 32px;
 }
 
 .service {
@@ -240,10 +257,10 @@ main {
 .options {
   display: flex;
   justify-content: space-around;
-  /* background: #ffff; */
   border: 1px #b9bbbe solid;
   max-width: 100%;
   border-radius: 4px;
+  margin-top: 16px;
 }
 
 .options > div {
@@ -261,8 +278,8 @@ main {
 }
 
 .hr-2 {
-  display: none;
   border: none;
+  display: none;
   height: 1px;
   width: 100%;
   background-color: #e5e7eb;
@@ -287,6 +304,10 @@ main {
   text-align: left;
 }
 
+.two {
+  margin-top: 32px;
+}
+
 .projects-container {
   display: flex;
   flex-direction: column;
@@ -295,20 +316,47 @@ main {
 .projects {
   display: flex;
   align-items: center;
-  gap: 8px;
+  margin-top: 16px;
+  gap: 12px;
 }
 
 .projects > div {
-  min-width: 160px;
-  background: #f3f3f3;
+  max-width: 500px;
+  background: #f0eeee;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  text-align: start;
+  align-items: center;
+  flex: 1 1 250px;
+  border-radius: 12px;
+  font-family: "Red Hat Text", sans-serif;
+  transition: all 0.3s ease-in;
+  animation: 500ms slide-in ease-in;
+  transform-origin: right;
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translate(200px);
+  }
+}
+
+.projects > div:hover {
+  transform: translateY(-6px);
 }
 
 .img-two {
-  width: 80%;
+  width: 100%;
+  min-height: 300px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  width: 100%;
 }
 
 @media (max-width: 550px) {
@@ -316,6 +364,8 @@ main {
     display: none;
   }
   .navigation {
+    padding-top: 0;
+    padding-bottom: 0;
     margin-bottom: 0px;
     margin-top: 0px;
   }
@@ -376,11 +426,7 @@ main {
     flex-direction: column;
   }
   .hr-2 {
-    border: none;
-    height: 1px;
-    width: 100%;
-    background-color: #e5e7eb;
-    margin: 8px 0;
+    display: block;
   }
   .options > div:not(:last-child) {
     border: none;
